@@ -3,6 +3,7 @@ package ho.artisan.mufog.init;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import ho.artisan.mufog.MufogMod;
+import ho.artisan.mufog.common.recipe.ForgingRecipe;
 import ho.artisan.mufog.common.recipe.ForgingRecipeSerializer;
 import ho.artisan.mufog.common.recipe.ForgingRecipeType;
 import net.minecraft.recipe.RecipeSerializer;
@@ -13,9 +14,9 @@ public class MufRecipes {
     private static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(MufogMod.MOD_ID, RegistryKeys.RECIPE_TYPE);
     private static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(MufogMod.MOD_ID, RegistryKeys.RECIPE_SERIALIZER);
 
-    public static final RegistrySupplier<RecipeType<?>> FORGING_RECIPE_TYPE;
+    public static final RegistrySupplier<RecipeType<ForgingRecipe>> FORGING_RECIPE_TYPE;
 
-    public static final RegistrySupplier<RecipeSerializer<?>> FORGING_RECIPE_SERIALIZER;
+    public static final RegistrySupplier<RecipeSerializer<ForgingRecipe>> FORGING_RECIPE_SERIALIZER;
 
     public static void init() {
         TYPES.register();

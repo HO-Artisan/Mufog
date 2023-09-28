@@ -39,9 +39,25 @@ public class ForgingRecipe implements Recipe<ForgingAnvilBlockEntity> {
     }
 
     @Override
-    public boolean matches(ForgingAnvilBlockEntity inventory, World world) {
-
-        return this.blueprint.test(inventory.blueprint);
+    public boolean matches(ForgingAnvilBlockEntity anvil, World world) {
+        boolean flag1 = this.blueprint.test(anvil.blueprint);
+        boolean flag2 = this.ingredients.length == anvil.size();
+        boolean flag3 = true;
+        boolean flag4 = true;
+        int process = -1;
+        for (int i = 0; i < anvil.size(); i++) {
+            ItemStack itemStack = anvil.getStack(i);
+            flag3 = flag3 && this.ingredients[i].test(itemStack);
+            if (anvil.hasForgingNBT(itemStack)) {
+                flag1 = flag1 && this.blueprint.test(anvil.getBlueprint(itemStack));
+                if (process < 0) {
+                    process = anvil.getProcessTime(itemStack);
+                }else {
+                    flag4 = flag4 && process == anvil.getProcessTime(itemStack);
+                }
+            }
+        }
+        return flag1 && flag2 && flag3 && flag4;
     }
 
     @Override

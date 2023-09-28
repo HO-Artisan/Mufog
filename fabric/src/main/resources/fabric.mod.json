@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "ho.artisan.mufog.fabric.MufogFabricMod"
+    ],
+    "client": [
+      "ho.artisan.mufog.fabric.MufogFabricMod"
     ]
   },
   "depends": {

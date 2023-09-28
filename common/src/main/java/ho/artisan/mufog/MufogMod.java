@@ -1,9 +1,6 @@
 package ho.artisan.mufog;
 
-import ho.artisan.mufog.init.MufBlockEntityTypes;
-import ho.artisan.mufog.init.MufBlocks;
-import ho.artisan.mufog.init.MufItemGroups;
-import ho.artisan.mufog.init.MufItems;
+import ho.artisan.mufog.init.*;
 import net.minecraft.util.Identifier;
 
 public class MufogMod {
@@ -13,6 +10,8 @@ public class MufogMod {
 		MufBlocks.init();
 		MufBlockEntityTypes.init();
 		MufItems.init();
+		MufSounds.init();
+		MufRecipes.init();
 		MufItemGroups.init();
 	}
 

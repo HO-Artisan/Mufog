@@ -24,7 +24,7 @@ public class MufItemGroups {
                 "main",
                 () -> CreativeTabRegistry.create(
                         Text.translatable("itemGroup.mufog.main"),
-                        () -> new ItemStack(MufItems.NETHERITE_HAMMER.get())
+                        () -> new ItemStack(MufItems.FORGING_ANVIL.get())
                 )
         );
 
