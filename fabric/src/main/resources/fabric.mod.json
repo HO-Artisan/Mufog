@@ -1,27 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "mufog",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Mufog",
+  "description": "The Smithing System based on Datapack!",
   "authors": [
-    "Me!"
+    "HO-Artisan",
+    "Chemiofitor"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/mod/mufog",
+    "issues": "https://github.com/Renascence-Studio/Mufog/issues",
+    "sources": "https://github.com/Renascence-Studio/Mufog"
   },
-  "license": "Insert License Here",
-  "icon": "assets/examplemod/icon.png",
+  "license": "MIT",
+  "icon": "assets/mufog/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.examplemod.fabric.ExampleModFabric"
+      "ho.artisan.mufog.fabric.MufogFabricMod"
     ]
   },
   "depends": {
-    "fabric": "*",
-    "minecraft": ">=1.19.2",
-    "architectury": ">=6.2.43"
+    "fabricloader": ">=0.14.22",
+    "minecraft": ">=1.20.1"
   }
 }

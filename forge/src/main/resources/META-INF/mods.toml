@@ -1,35 +1,28 @@
-modLoader = "javafml"
-loaderVersion = "[43,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+issueTrackerURL="https://github.com/HO-Artisan/Mufog/issues"
 
 [[mods]]
-modId = "examplemod"
-version = "${version}"
-displayName = "Example Mod"
-authors = "Me!"
-description = '''
-This is an example description! Tell everyone what your mod is about!
+modId="mufog"
+version="${version}"
+displayName="Mufog"
+logoFile="icon.png"
+authors="HO-Artisan,Chemiofitor"
+description='''
+The Smithing System based on Datapack!
 '''
-#logoFile = ""
 
-[[dependencies.examplemod]]
-modId = "forge"
-mandatory = true
-versionRange = "[43,)"
-ordering = "NONE"
-side = "BOTH"
+[[dependencies.mufog]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
 
-[[dependencies.examplemod]]
-modId = "minecraft"
-mandatory = true
-versionRange = "[1.19.2,)"
-ordering = "NONE"
-side = "BOTH"
-
-[[dependencies.examplemod]]
-modId = "architectury"
-mandatory = true
-versionRange = "[6.2.43,)"
-ordering = "AFTER"
-side = "BOTH"
+[[dependencies.mufog]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
