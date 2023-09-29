@@ -47,7 +47,10 @@ public class ForgingRecipe implements Recipe<ForgingAnvilBlockEntity> {
         int process = -1;
         for (int i = 0; i < anvil.size(); i++) {
             ItemStack itemStack = anvil.getStack(i);
-            flag3 = flag3 && this.ingredients[i].test(itemStack);
+            if (flag2)
+                flag3 = flag3 && this.ingredients[i].test(itemStack);
+            else
+                flag3 = false;
             if (anvil.hasForgingNBT(itemStack)) {
                 flag1 = flag1 && this.blueprint.test(anvil.getBlueprint(itemStack));
                 if (process < 0) {

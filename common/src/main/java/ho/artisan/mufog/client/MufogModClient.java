@@ -7,5 +7,6 @@ import ho.artisan.mufog.init.MufBlockEntityTypes;
 public class MufogModClient {
     public static void init() {
         BlockEntityRendererRegistry.register(MufBlockEntityTypes.FORGING_ANVIL.get(), ForgingAnvilRenderer::new);
+
     }
 }

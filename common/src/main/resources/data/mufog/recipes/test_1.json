@@ -3,12 +3,16 @@
   "ingredients": [
     {
       "item": "minecraft:redstone_ore"
+    },
+    {
+      "item": "minecraft:redstone_ore"
     }
   ],
   "processtime": 5,
-  "level": 1,
+  "level": 2,
   "result": {
     "item": "minecraft:redstone",
-    "count": 1
-  }
+    "count": 4
+  },
+  "chance": 0.5
 }

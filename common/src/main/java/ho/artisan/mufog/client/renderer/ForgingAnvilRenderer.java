@@ -1,5 +1,6 @@
 package ho.artisan.mufog.client.renderer;
 
+import ho.artisan.mufog.common.block.ForgingAnvilBlock;
 import ho.artisan.mufog.common.blockentity.ForgingAnvilBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -9,7 +10,6 @@ import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
-import org.joml.Quaternionf;
 
 import java.util.Stack;
 
@@ -28,15 +28,16 @@ public class ForgingAnvilRenderer implements BlockEntityRenderer<ForgingAnvilBlo
                 boolean blockItem = itemRenderer.getModel(stack.elementAt(i), entity.getWorld(), null, (int) entity.getPos().asLong()).hasDepth();
                 matrices.push();
                 if (blockItem)
-                    y += 7/24f;
+                    y += 7/24f * 0.75f;
                 else
-                    y += 1/16f;
+                    y += 1/16f * 0.75f;
                 matrices.translate(0.5f, y, 0.5f);
-                matrices.multiply(new Quaternionf().rotateX((float) Math.PI * 0.5f));
+                matrices.multiply(entity.getCachedState().get(ForgingAnvilBlock.FACING).rotateYCounterclockwise().getRotationQuaternion());
+                matrices.scale(0.75f, 0.75f, 0.75f);
                 itemRenderer.renderItem(stack.elementAt(i), ModelTransformationMode.FIXED, light, overlay, matrices, vertexConsumers, null, 0);
                 matrices.pop();
                 if (blockItem)
-                    y += 5/24f;
+                    y += 5/24f * 0.75f;
             }
         }
     }

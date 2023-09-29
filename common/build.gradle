@@ -1,9 +1,25 @@
+repositories {
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.architectury.dev/" }
+    maven { url "https://maven.terraformersmc.com/" }
+    maven {
+        url = "https://maven.saps.dev/minecraft"
+        content {
+            includeGroup "dev.latvian.mods"
+        }
+    }
+}
+
 dependencies {
-    // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
-    // Do NOT use other classes from fabric loader
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    // Remove the next line if you don't want to depend on the API
-    modApi "dev.architectury:architectury:${rootProject.architectury_version}"
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+
+    modApi "dev.architectury:architectury:${architectury_version}"
+
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:${rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:${rei_version}"
+    modCompileOnly "dev.emi:emi-xplat-intermediary:${emi_version}:api"
+
+    modCompileOnly "dev.latvian.mods:kubejs:${kjs_version}"
 }
 
 architectury {
@@ -13,7 +29,7 @@ architectury {
 publishing {
     publications {
         mavenCommon(MavenPublication) {
-            artifactId = rootProject.archives_base_name
+            artifactId = archives_base_name
             from components.java
         }
     }

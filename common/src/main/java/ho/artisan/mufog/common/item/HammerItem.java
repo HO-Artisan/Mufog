@@ -40,4 +40,13 @@ public class HammerItem extends MiningToolItem {
         }
         return level;
     }
+
+    public static TagKey<Item> matchLevel(int level) {
+        return switch (level) {
+            default -> LEVEL_1;
+            case 2 -> LEVEL_2;
+            case 3 -> LEVEL_3;
+            case 4 -> LEVEL_4;
+        };
+    }
 }
